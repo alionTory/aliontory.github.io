@@ -1,9 +1,9 @@
-title:              Clean Blog
-email:              your-email@example.com
+title:              외계인 토리의 블로그
+email:              nocurim67@gmail.com
 description:        A Blog Theme by Start Bootstrap
-author:             Start Bootstrap
-baseurl:            "/startbootstrap-clean-blog-jekyll"
-url:                "https://startbootstrap.github.io"
+author:             aliontory
+baseurl:            "/aliontory"
+url:                "https://aliontory.github.io"
 
 # Social Profiles
 twitter_username:   SBootstrap
