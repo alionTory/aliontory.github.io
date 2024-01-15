@@ -1,0 +1,1647 @@
+﻿<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=unicode">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 15">
+<meta name=Originator content="Microsoft Word 15">
+<link rel=File-List
+href="21.%20근사문자열매칭(String%20matching)%20%5b10-2주차%5d.files/filelist.xml">
+<link rel=Edit-Time-Data
+href="21.%20근사문자열매칭(String%20matching)%20%5b10-2주차%5d.files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>aliontory</o:Author>
+  <o:LastAuthor>노그림 오</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>0</o:TotalTime>
+  <o:Created>2024-01-15T11:22:00Z</o:Created>
+  <o:LastSaved>2024-01-15T11:22:00Z</o:LastSaved>
+  <o:Pages>7</o:Pages>
+  <o:Words>309</o:Words>
+  <o:Characters>1765</o:Characters>
+  <o:Lines>14</o:Lines>
+  <o:Paragraphs>4</o:Paragraphs>
+  <o:CharactersWithSpaces>2070</o:CharactersWithSpaces>
+  <o:Version>16.00</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<link rel=themeData
+href="21.%20근사문자열매칭(String%20matching)%20%5b10-2주차%5d.files/themedata.thmx">
+<link rel=colorSchemeMapping
+href="21.%20근사문자열매칭(String%20matching)%20%5b10-2주차%5d.files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:View>Print</w:View>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>KO</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
+  DefSemiHidden="false" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="376">
+  <w:LsdException Locked="false" Priority="0" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 9"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="header"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footer"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index heading"/>
+  <w:LsdException Locked="false" Priority="35" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of figures"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope return"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="line number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="page number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of authorities"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="macro"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="toa heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 5"/>
+  <w:LsdException Locked="false" Priority="10" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Closing"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Signature"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Message Header"/>
+  <w:LsdException Locked="false" Priority="11" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Salutation"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Date"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Note Heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Block Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="FollowedHyperlink"/>
+  <w:LsdException Locked="false" Priority="22" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Document Map"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Plain Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="E-mail Signature"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Top of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Bottom of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal (Web)"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Acronym"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Cite"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Code"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Definition"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Keyboard"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Preformatted"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Sample"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Typewriter"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Variable"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Table"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation subject"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="No List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Contemporary"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Elegant"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Professional"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Balloon Text"/>
+  <w:LsdException Locked="false" Priority="39" Name="Table Grid"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Theme"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" QFormat="true"
+   Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" QFormat="true"
+   Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" QFormat="true"
+   Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" QFormat="true"
+   Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" QFormat="true"
+   Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" QFormat="true"
+   Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="TOC Heading"/>
+  <w:LsdException Locked="false" Priority="41" Name="Plain Table 1"/>
+  <w:LsdException Locked="false" Priority="42" Name="Plain Table 2"/>
+  <w:LsdException Locked="false" Priority="43" Name="Plain Table 3"/>
+  <w:LsdException Locked="false" Priority="44" Name="Plain Table 4"/>
+  <w:LsdException Locked="false" Priority="45" Name="Plain Table 5"/>
+  <w:LsdException Locked="false" Priority="40" Name="Grid Table Light"/>
+  <w:LsdException Locked="false" Priority="46" Name="Grid Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="Grid Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="Grid Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="46" Name="List Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="List Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="List Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Mention"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Smart Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hashtag"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Unresolved Mention"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Smart Link"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:굴림;
+	panose-1:2 11 6 0 0 1 1 1 1 1;
+	mso-font-alt:Gulim;
+	mso-font-charset:129;
+	mso-generic-font-family:modern;
+	mso-font-pitch:variable;
+	mso-font-signature:-1342176593 1775729915 48 0 524447 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-536869121 1107305727 33554432 0 415 0;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-469750017 -1040178053 9 0 511 0;}
+@font-face
+	{font-family:"맑은 고딕";
+	panose-1:2 11 5 3 2 0 0 2 0 4;
+	mso-font-charset:129;
+	mso-generic-font-family:modern;
+	mso-font-pitch:variable;
+	mso-font-signature:-1879048145 701988091 18 0 524289 0;}
+@font-face
+	{font-family:"\@맑은 고딕";
+	mso-font-charset:129;
+	mso-generic-font-family:modern;
+	mso-font-pitch:variable;
+	mso-font-signature:-1879048145 701988091 18 0 524289 0;}
+@font-face
+	{font-family:"\@굴림";
+	panose-1:2 11 6 0 0 1 1 1 1 1;
+	mso-font-charset:129;
+	mso-generic-font-family:modern;
+	mso-font-pitch:variable;
+	mso-font-signature:-1342176593 1775729915 48 0 524447 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:굴림;
+	mso-bidi-font-family:굴림;}
+p
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:굴림;
+	mso-bidi-font-family:굴림;}
+p.msonormal0, li.msonormal0, div.msonormal0
+	{mso-style-name:msonormal;
+	mso-style-unhide:no;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:굴림;
+	mso-bidi-font-family:굴림;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	mso-bidi-font-size:10.0pt;
+	mso-ascii-font-family:"Times New Roman";
+	mso-hansi-font-family:"Times New Roman";
+	mso-font-kerning:0pt;
+	mso-ligatures:none;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:3.0cm 72.0pt 72.0pt 72.0pt;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:49.6pt;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:57167459;
+	mso-list-template-ids:-836444046;}
+@list l1
+	{mso-list-id:803424871;
+	mso-list-template-ids:1121586354;}
+@list l2
+	{mso-list-id:1033992382;
+	mso-list-template-ids:-986831958;}
+@list l3
+	{mso-list-id:1149175846;
+	mso-list-template-ids:-2044960520;}
+@list l4
+	{mso-list-id:1285576037;
+	mso-list-template-ids:2087584406;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l4:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l4:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l4:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l4:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l4:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l4:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l4:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l4:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l5
+	{mso-list-id:1333217216;
+	mso-list-template-ids:-925857264;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l5:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l5:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l5:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l5:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l5:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l5:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l5:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l5:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l6
+	{mso-list-id:1745175525;
+	mso-list-template-ids:-1262815028;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l6:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l6:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l6:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l6:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l6:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l6:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l6:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l6:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l7
+	{mso-list-id:1753432296;
+	mso-list-template-ids:1777135906;}
+@list l7:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l7:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l7:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l7:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l7:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l7:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l7:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l7:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l7:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:;
+	mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l8
+	{mso-list-id:1768454275;
+	mso-list-template-ids:-96928094;}
+@list l9
+	{mso-list-id:2059892372;
+	mso-list-template-ids:-740012928;}
+@list l2:level1 lfo4
+	{mso-level-start-at:2;}
+@list l1:level1 lfo5
+	{mso-level-start-at:3;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"표준 표";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman",serif;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1026"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=KO style='tab-interval:40.0pt;word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<div style='border-width:100%'>
+
+<div>
+
+<div style='margin-left:1.5pt'>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:20.0pt;font-family:
+"맑은 고딕";mso-bidi-font-family:Calibri'>21. </span><span style='font-size:20.0pt;
+font-family:"맑은 고딕";mso-bidi-font-family:Calibri'>근사문자열매칭<span lang=EN-US>(String
+matching) [10-2</span>주차<span lang=EN-US>]<o:p></o:p></span></span></p>
+
+</div>
+
+<div style='margin-left:1.5pt;margin-top:3.0pt'>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:10.0pt;font-family:
+"Calibri",sans-serif;color:#767676'>2024</span><span style='font-size:10.0pt;
+font-family:"맑은 고딕";mso-bidi-font-family:Calibri;color:#767676'>년</span><span
+lang=EN-US style='font-size:10.0pt;font-family:"Calibri",sans-serif;color:#767676'>
+1</span><span style='font-size:10.0pt;font-family:"맑은 고딕";mso-bidi-font-family:
+Calibri;color:#767676'>월</span><span lang=EN-US style='font-size:10.0pt;
+font-family:"Calibri",sans-serif;color:#767676'> 14</span><span
+style='font-size:10.0pt;font-family:"맑은 고딕";mso-bidi-font-family:Calibri;
+color:#767676'>일 일요일</span><span lang=EN-US style='font-size:10.0pt;font-family:
+"Calibri",sans-serif;color:#767676'><o:p></o:p></span></p>
+
+<p style='margin:0cm'><span style='font-size:10.0pt;font-family:"맑은 고딕";
+mso-bidi-font-family:Calibri;color:#767676'>오전</span><span lang=EN-US
+style='font-size:10.0pt;font-family:"Calibri",sans-serif;color:#767676'> 2:56<o:p></o:p></span></p>
+
+</div>
+
+<div style='margin-top:34.0pt'>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:14.0pt;font-family:
+"Calibri",sans-serif'>&lt;</span><span style='font-size:14.0pt;font-family:
+"맑은 고딕";mso-bidi-font-family:Calibri'>근사문자열매칭</span><span lang=EN-US
+style='font-size:14.0pt;font-family:"Calibri",sans-serif'>(String matching)&gt;<o:p></o:p></span></p>
+
+<p style='margin:0cm'><span style='font-size:14.0pt;font-family:"맑은 고딕";
+mso-bidi-font-family:Calibri'>문자열의 유사도를 판단하는 알고리즘<span lang=EN-US>.<o:p></o:p></span></span></p>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:14.0pt;font-family:
+"맑은 고딕";mso-bidi-font-family:Calibri'>&nbsp;<o:p></o:p></span></p>
+
+<p style='margin:0cm'><span style='font-size:14.0pt;font-family:"맑은 고딕";
+mso-bidi-font-family:Calibri'>사용 예<span lang=EN-US><o:p></o:p></span></span></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='mso-list:l5 level1 lfo1;tab-stops:list 36.0pt;
+     vertical-align:middle'><span style='font-size:14.0pt;font-family:"맑은 고딕";
+     mso-bidi-font-family:Calibri'>주어진 문자열과 비슷한 문자열 검색</span><span lang=EN-US
+     style='font-size:11.0pt;font-family:"Calibri",sans-serif'><o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l5 level1 lfo1;tab-stops:list 36.0pt;
+     vertical-align:middle'><span style='font-size:14.0pt;font-family:"맑은 고딕";
+     mso-bidi-font-family:Calibri'>검색엔진의 유사어 추천 기능</span><span lang=EN-US
+     style='font-size:11.0pt;font-family:"Calibri",sans-serif'><o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l5 level1 lfo1;tab-stops:list 36.0pt;
+     vertical-align:middle'><span style='font-size:14.0pt;font-family:"맑은 고딕";
+     mso-bidi-font-family:Calibri'>악성 코드와 유사한 문자열이 있는지 검색</span><span
+     lang=EN-US style='font-size:11.0pt;font-family:"Calibri",sans-serif'><o:p></o:p></span></li>
+</ul>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:14.0pt;font-family:
+"맑은 고딕";mso-bidi-font-family:Calibri'>&nbsp;<o:p></o:p></span></p>
+
+<p style='margin:0cm'><span style='font-size:14.0pt;font-family:"맑은 고딕";
+mso-bidi-font-family:Calibri'>유사도를 판단하는 척도로 다음과 같은 거리 함수들이 사용된다<span
+lang=EN-US>.<o:p></o:p></span></span></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='mso-list:l7 level1 lfo2;tab-stops:list 36.0pt;
+     vertical-align:middle'><span style='font-size:14.0pt;font-family:"맑은 고딕";
+     mso-bidi-font-family:Calibri'>해밍거리<span lang=EN-US>(Hamming distance) : </span>문자열
+     두 개의 서로 같은 인덱스마다 문자가 서로 같은지를 비교한다<span lang=EN-US>. </span>한 글자만 밀려도 완전히 다른
+     문자가 된다는 단점이 있다<span lang=EN-US>.</span></span><span lang=EN-US
+     style='font-size:11.0pt;font-family:"Calibri",sans-serif'><o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l7 level1 lfo2;tab-stops:list 36.0pt;
+     vertical-align:middle'><span style='font-size:14.0pt;font-family:"맑은 고딕";
+     mso-bidi-font-family:Calibri;color:red'>편집거리</span><span lang=EN-US
+     style='font-size:14.0pt;font-family:"맑은 고딕";mso-bidi-font-family:Calibri'>(edit
+     distance)</span><span lang=EN-US style='font-size:11.0pt;font-family:"Calibri",sans-serif'><o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l7 level1 lfo2;tab-stops:list 36.0pt;
+     vertical-align:middle'><span style='font-size:14.0pt;font-family:"맑은 고딕";
+     mso-bidi-font-family:Calibri'>가중편집거리<span lang=EN-US>(weighted edit
+     distance) : </span>문자마다 편집 연산에 드는 비용이 다름<span lang=EN-US>. </span>예<span
+     lang=EN-US>) 'a'</span>와<span lang=EN-US> 'b'</span>의 삭제 연산 비용이 서로 다름</span><span
+     lang=EN-US style='font-size:11.0pt;font-family:"Calibri",sans-serif'><o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l7 level1 lfo2;tab-stops:list 36.0pt;
+     vertical-align:middle'><span style='font-size:14.0pt;font-family:"맑은 고딕";
+     mso-bidi-font-family:Calibri'>기타</span><span lang=EN-US style='font-size:
+     11.0pt;font-family:"Calibri",sans-serif'><o:p></o:p></span></li>
+</ul>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:14.0pt;font-family:
+"맑은 고딕";mso-bidi-font-family:Calibri'>&nbsp;<o:p></o:p></span></p>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:14.0pt;font-family:
+"맑은 고딕";mso-bidi-font-family:Calibri'>&nbsp;<o:p></o:p></span></p>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:14.0pt;font-family:
+"맑은 고딕";mso-bidi-font-family:Calibri'>&lt;</span><span style='font-size:14.0pt;
+font-family:"맑은 고딕";mso-bidi-font-family:Calibri'>편집 거리<span lang=EN-US>&gt;<o:p></o:p></span></span></p>
+
+<p style='margin:0cm'><span style='font-size:14.0pt;font-family:"맑은 고딕";
+mso-bidi-font-family:Calibri'>문자열<span lang=EN-US> x[1..m]</span>을<span
+lang=EN-US> y[1..n]</span>으로 변환하기 위해 필요한 <span style='color:red'>편집 연산의 최소 수</span><span
+lang=EN-US>.<o:p></o:p></span></span></p>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:14.0pt;font-family:
+"맑은 고딕";mso-bidi-font-family:Calibri'>&nbsp;<o:p></o:p></span></p>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:14.0pt;font-family:
+"맑은 고딕";mso-bidi-font-family:Calibri'>&nbsp;<o:p></o:p></span></p>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:14.0pt;font-family:
+"맑은 고딕";mso-bidi-font-family:Calibri'>&lt;</span><span style='font-size:14.0pt;
+font-family:"맑은 고딕";mso-bidi-font-family:Calibri'>편집 연산<span lang=EN-US>(edit
+operation)&gt;<o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l8 level1 lfo3;
+tab-stops:list 36.0pt;vertical-align:middle'><![if !supportLists]><span
+lang=EN-US style='font-size:14.0pt;font-family:"Calibri",sans-serif;mso-fareast-font-family:
+Calibri'><span style='mso-list:Ignore'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:14.0pt;font-family:"맑은 고딕";
+mso-bidi-font-family:Calibri'>삽입<span lang=EN-US>(Insertion)</span></span><span
+lang=EN-US style='font-size:14.0pt;font-family:"Calibri",sans-serif'><o:p></o:p></span></p>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:27.0pt'><span
+lang=EN-US style='font-size:14.0pt;font-family:"맑은 고딕";mso-bidi-font-family:
+Calibri'>x</span><span style='font-size:14.0pt;font-family:"맑은 고딕";mso-bidi-font-family:
+Calibri'>의 한 위치에 문자 하나를 삽입한다<span lang=EN-US>. (</span>사이에 끼워 넣음<span
+lang=EN-US>)<o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l2 level1 lfo4;
+tab-stops:list 36.0pt;vertical-align:middle'><![if !supportLists]><span
+lang=EN-US style='font-size:14.0pt;font-family:"Calibri",sans-serif;mso-fareast-font-family:
+Calibri'><span style='mso-list:Ignore'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:14.0pt;font-family:"맑은 고딕";
+mso-bidi-font-family:Calibri'>삭제<span lang=EN-US>(Deletion)</span></span><span
+lang=EN-US style='font-size:14.0pt;font-family:"Calibri",sans-serif'><o:p></o:p></span></p>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:27.0pt'><span
+lang=EN-US style='font-size:14.0pt;font-family:"맑은 고딕";mso-bidi-font-family:
+Calibri'>x</span><span style='font-size:14.0pt;font-family:"맑은 고딕";mso-bidi-font-family:
+Calibri'>의 문자 하나를 삭제한다<span lang=EN-US>.<o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo5;
+tab-stops:list 36.0pt;vertical-align:middle'><![if !supportLists]><span
+lang=EN-US style='font-size:14.0pt;font-family:"Calibri",sans-serif;mso-fareast-font-family:
+Calibri'><span style='mso-list:Ignore'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:14.0pt;font-family:"맑은 고딕";
+mso-bidi-font-family:Calibri'>교체<span lang=EN-US>(Substitution, Replacement,
+Change)</span></span><span lang=EN-US style='font-size:14.0pt;font-family:"Calibri",sans-serif'><o:p></o:p></span></p>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:27.0pt'><span
+lang=EN-US style='font-size:14.0pt;font-family:"맑은 고딕";mso-bidi-font-family:
+Calibri'>x</span><span style='font-size:14.0pt;font-family:"맑은 고딕";mso-bidi-font-family:
+Calibri'>의 문자 하나를 다른 문자로 교체한다<span lang=EN-US>.<o:p></o:p></span></span></p>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:27.0pt'><span
+lang=EN-US style='font-size:14.0pt;font-family:"맑은 고딕";mso-bidi-font-family:
+Calibri'>&nbsp;<o:p></o:p></span></p>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:14.0pt;font-family:
+"맑은 고딕";mso-bidi-font-family:Calibri'>&nbsp;<o:p></o:p></span></p>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:14.0pt;font-family:
+"맑은 고딕";mso-bidi-font-family:Calibri'>&lt;</span><span style='font-size:14.0pt;
+font-family:"맑은 고딕";mso-bidi-font-family:Calibri'>편집 거리 구하기<span lang=EN-US>&gt;<o:p></o:p></span></span></p>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:14.0pt;font-family:
+"맑은 고딕";mso-bidi-font-family:Calibri'>D(<span style='color:red'>i</span>, <span
+style='color:red'>j</span>)</span><span style='font-size:14.0pt;font-family:
+"맑은 고딕";mso-bidi-font-family:Calibri'>를<span lang=EN-US> x[1..<span
+style='color:red'>i</span>]</span>와<span lang=EN-US> y[1..<span
+style='color:red'>j</span>]</span>의 편집 거리라고 하자<span lang=EN-US>.<o:p></o:p></span></span></p>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:14.0pt;font-family:
+"맑은 고딕";mso-bidi-font-family:Calibri'>D(m, n)</span><span style='font-size:
+14.0pt;font-family:"맑은 고딕";mso-bidi-font-family:Calibri'>을 계산하기 위해 각<span
+lang=EN-US> i</span>와<span lang=EN-US> j(0&lt;=i&lt;=m, 0&lt;=j&lt;=n)</span>에 대해<span
+lang=EN-US> D(i, j)</span>를 계산한다<span lang=EN-US>.<o:p></o:p></span></span></p>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:14.0pt;font-family:
+"맑은 고딕";mso-bidi-font-family:Calibri'>&nbsp;<o:p></o:p></span></p>
+
+<p style='margin:0cm'><span style='font-size:14.0pt;font-family:"맑은 고딕";
+mso-bidi-font-family:Calibri'>동적 프로그래밍 요소<span lang=EN-US><o:p></o:p></span></span></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='mso-list:l6 level1 lfo6;tab-stops:list 36.0pt;
+     vertical-align:middle'><span lang=EN-US style='font-size:14.0pt;
+     font-family:"맑은 고딕";mso-bidi-font-family:Calibri'>Recurrence relation</span><span
+     lang=EN-US style='font-size:11.0pt;font-family:"Calibri",sans-serif'><o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l6 level1 lfo6;tab-stops:list 36.0pt;
+     vertical-align:middle'><span lang=EN-US style='font-size:14.0pt;
+     font-family:"맑은 고딕";mso-bidi-font-family:Calibri'>Tabular Computation</span><span
+     lang=EN-US style='font-size:11.0pt;font-family:"Calibri",sans-serif'><o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l6 level1 lfo6;tab-stops:list 36.0pt;
+     vertical-align:middle'><span lang=EN-US style='font-size:14.0pt;
+     font-family:"맑은 고딕";mso-bidi-font-family:Calibri'>Traceback</span><span
+     lang=EN-US style='font-size:11.0pt;font-family:"Calibri",sans-serif'><o:p></o:p></span></li>
+</ul>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:14.0pt;font-family:
+"맑은 고딕";mso-bidi-font-family:Calibri'>&nbsp;<o:p></o:p></span></p>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:14.0pt;font-family:
+"맑은 고딕";mso-bidi-font-family:Calibri'>&nbsp;<o:p></o:p></span></p>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:14.0pt;font-family:
+"맑은 고딕";mso-bidi-font-family:Calibri'>&lt;</span><span style='font-size:14.0pt;
+font-family:"맑은 고딕";mso-bidi-font-family:Calibri'>편집 거리의 점화식 구하기<span
+lang=EN-US> (Recurrence relation)&gt;<o:p></o:p></span></span></p>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:14.0pt;font-family:
+"맑은 고딕";mso-bidi-font-family:Calibri'>D(i, j)</span><span style='font-size:
+14.0pt;font-family:"맑은 고딕";mso-bidi-font-family:Calibri'>를 계산할 때<span
+lang=EN-US>, <span style='color:red'>x</span></span><span style='color:red'>와<span
+lang=EN-US> y</span>의 맨 마지막 문자부터 처리</span>하면서<span lang=EN-US>, </span>이전 문자들에 대해
+재귀 호출을 하는 식으로 편집 거리들을 구해 보자<span lang=EN-US>.<o:p></o:p></span></span></p>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:14.0pt;font-family:
+"맑은 고딕";mso-bidi-font-family:Calibri'>&nbsp;<o:p></o:p></span></p>
+
+<p style='margin:0cm'><span style='font-size:14.0pt;font-family:"맑은 고딕";
+mso-bidi-font-family:Calibri'>맨 마지막 문자들을 비교했을 때<span lang=EN-US>, </span>두 문자가 같을
+수 있다<span lang=EN-US>.<o:p></o:p></span></span></p>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:11.0pt;font-family:
+"Calibri",sans-serif;mso-no-proof:yes'><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="그림_x0020_1" o:spid="_x0000_i1032" type="#_x0000_t75"
+ style='width:315pt;height:180pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="21.%20근사문자열매칭(String%20matching)%20%5b10-2주차%5d.files/image001.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=420 height=240
+src="21.%20근사문자열매칭(String%20matching)%20%5b10-2주차%5d.files/image002.jpg"
+v:shapes="그림_x0020_1"><![endif]></span><span lang=EN-US style='font-size:11.0pt;
+font-family:"Calibri",sans-serif'><o:p></o:p></span></p>
+
+<p style='margin:0cm'><span style='font-size:14.0pt;font-family:"맑은 고딕";
+mso-bidi-font-family:Calibri'>이때<span lang=EN-US>, </span>편집 연산 없이<span
+lang=EN-US> D(i-1, j-1)</span>를 구하면 된다<span lang=EN-US>.<o:p></o:p></span></span></p>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:14.0pt;font-family:
+"맑은 고딕";mso-bidi-font-family:Calibri'>&nbsp;<o:p></o:p></span></p>
+
+<p style='margin:0cm'><span style='font-size:14.0pt;font-family:"맑은 고딕";
+mso-bidi-font-family:Calibri'>마지막 두 문자가 다른 경우<span lang=EN-US>, </span>다음 세 가지 방법으로
+처리할 수 있다<span lang=EN-US>.<o:p></o:p></span></span></p>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:14.0pt;font-family:
+"맑은 고딕";mso-bidi-font-family:Calibri'>&nbsp;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo7;
+tab-stops:list 36.0pt;vertical-align:middle'><![if !supportLists]><span
+lang=EN-US style='font-size:14.0pt;font-family:"Calibri",sans-serif;mso-fareast-font-family:
+Calibri'><span style='mso-list:Ignore'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-US style='font-size:14.0pt;
+font-family:"맑은 고딕";mso-bidi-font-family:Calibri'>replace </span><span
+style='font-size:14.0pt;font-family:"맑은 고딕";mso-bidi-font-family:Calibri'>연산을 통해
+처리</span><span lang=EN-US style='font-size:14.0pt;font-family:"Calibri",sans-serif'><o:p></o:p></span></p>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:11.0pt;font-family:
+"Calibri",sans-serif;mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="그림_x0020_2"
+ o:spid="_x0000_i1031" type="#_x0000_t75" style='width:435pt;height:159pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="21.%20근사문자열매칭(String%20matching)%20%5b10-2주차%5d.files/image003.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=580 height=212
+src="21.%20근사문자열매칭(String%20matching)%20%5b10-2주차%5d.files/image004.jpg"
+v:shapes="그림_x0020_2"><![endif]></span><span lang=EN-US style='font-size:11.0pt;
+font-family:"Calibri",sans-serif'><o:p></o:p></span></p>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:14.0pt;font-family:
+"맑은 고딕";mso-bidi-font-family:Calibri'>&nbsp;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l9 level1 lfo8;
+tab-stops:list 36.0pt;vertical-align:middle'><![if !supportLists]><span
+lang=EN-US style='font-size:14.0pt;font-family:"Calibri",sans-serif;mso-fareast-font-family:
+Calibri'><span style='mso-list:Ignore'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-US style='font-size:14.0pt;
+font-family:"맑은 고딕";mso-bidi-font-family:Calibri'>insert </span><span
+style='font-size:14.0pt;font-family:"맑은 고딕";mso-bidi-font-family:Calibri'>연산을 통해
+처리</span><span lang=EN-US style='font-size:14.0pt;font-family:"Calibri",sans-serif'><o:p></o:p></span></p>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:11.0pt;font-family:
+"Calibri",sans-serif;mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="그림_x0020_3"
+ o:spid="_x0000_i1030" type="#_x0000_t75" style='width:420pt;height:172.5pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="21.%20근사문자열매칭(String%20matching)%20%5b10-2주차%5d.files/image005.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=560 height=230
+src="21.%20근사문자열매칭(String%20matching)%20%5b10-2주차%5d.files/image006.jpg"
+v:shapes="그림_x0020_3"><![endif]></span><span lang=EN-US style='font-size:11.0pt;
+font-family:"Calibri",sans-serif'><o:p></o:p></span></p>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:14.0pt;font-family:
+"맑은 고딕";mso-bidi-font-family:Calibri'>&nbsp;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l3 level1 lfo9;
+tab-stops:list 36.0pt;vertical-align:middle'><![if !supportLists]><span
+lang=EN-US style='font-size:14.0pt;font-family:"Calibri",sans-serif;mso-fareast-font-family:
+Calibri'><span style='mso-list:Ignore'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-US style='font-size:14.0pt;
+font-family:"맑은 고딕";mso-bidi-font-family:Calibri'>delete </span><span
+style='font-size:14.0pt;font-family:"맑은 고딕";mso-bidi-font-family:Calibri'>연산을 통해
+처리</span><span lang=EN-US style='font-size:14.0pt;font-family:"Calibri",sans-serif'><o:p></o:p></span></p>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:11.0pt;font-family:
+"Calibri",sans-serif;mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="그림_x0020_4"
+ o:spid="_x0000_i1029" type="#_x0000_t75" style='width:406.5pt;height:171pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="21.%20근사문자열매칭(String%20matching)%20%5b10-2주차%5d.files/image007.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=542 height=228
+src="21.%20근사문자열매칭(String%20matching)%20%5b10-2주차%5d.files/image008.jpg"
+v:shapes="그림_x0020_4"><![endif]></span><span lang=EN-US style='font-size:11.0pt;
+font-family:"Calibri",sans-serif'><o:p></o:p></span></p>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:14.0pt;font-family:
+"Calibri",sans-serif'>&nbsp;<o:p></o:p></span></p>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:14.0pt;font-family:
+"Calibri",sans-serif'>&nbsp;<o:p></o:p></span></p>
+
+<p style='margin:0cm'><span style='font-size:14.0pt;font-family:"맑은 고딕";
+mso-bidi-font-family:Calibri'>이를 통해<span lang=EN-US>, D(i, j)</span>에 대해 다음과 같은
+점화식을 세울 수 있다<span lang=EN-US>.<o:p></o:p></span></span></p>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:14.0pt;font-family:
+"맑은 고딕";mso-bidi-font-family:Calibri'>&nbsp;<o:p></o:p></span></p>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:11.0pt;font-family:
+"Calibri",sans-serif;mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="그림_x0020_5"
+ o:spid="_x0000_i1028" type="#_x0000_t75" style='width:498pt;height:127pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="21.%20근사문자열매칭(String%20matching)%20%5b10-2주차%5d.files/image009.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=664 height=169
+src="21.%20근사문자열매칭(String%20matching)%20%5b10-2주차%5d.files/image010.jpg"
+v:shapes="그림_x0020_5"><![endif]></span><span lang=EN-US style='font-size:11.0pt;
+font-family:"Calibri",sans-serif'><o:p></o:p></span></p>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:14.0pt;font-family:
+"맑은 고딕";mso-bidi-font-family:Calibri'>t(i, j) </span><span style='font-size:
+14.0pt;font-family:"맑은 고딕";mso-bidi-font-family:Calibri'>의 값은<span lang=EN-US>
+match</span>의 경우<span lang=EN-US> 0, mismatch(replace)</span>인 경우<span
+lang=EN-US> 1.<o:p></o:p></span></span></p>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:14.0pt;font-family:
+"맑은 고딕";mso-bidi-font-family:Calibri'>&nbsp;<o:p></o:p></span></p>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:14.0pt;font-family:
+"맑은 고딕";mso-bidi-font-family:Calibri'>&nbsp;<o:p></o:p></span></p>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:14.0pt;font-family:
+"맑은 고딕";mso-bidi-font-family:Calibri'>&lt;Tabular Computation&gt;<o:p></o:p></span></p>
+
+<p style='margin:0cm'><span style='font-size:14.0pt;font-family:"맑은 고딕";
+mso-bidi-font-family:Calibri'>위에서 구한 점화식을 이용해<span lang=EN-US>, </span>이번에는 반대로<span
+lang=EN-US> D(1, 1)</span>부터<span lang=EN-US> D(i, j)</span>까지를 구해 보자<span
+lang=EN-US>.<o:p></o:p></span></span></p>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:14.0pt;font-family:
+"맑은 고딕";mso-bidi-font-family:Calibri'>&nbsp;<o:p></o:p></span></p>
+
+<p style='margin:0cm'><span style='font-size:14.0pt;font-family:"맑은 고딕";
+mso-bidi-font-family:Calibri'>아래 행렬의<span lang=EN-US> (i, j) </span>칸에<span
+lang=EN-US> D(i, j)</span>를 적는다<span lang=EN-US>.<o:p></o:p></span></span></p>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:11.0pt;font-family:
+"Calibri",sans-serif;mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="그림_x0020_6"
+ o:spid="_x0000_i1027" type="#_x0000_t75" style='width:495pt;height:276pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="21.%20근사문자열매칭(String%20matching)%20%5b10-2주차%5d.files/image011.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=660 height=368
+src="21.%20근사문자열매칭(String%20matching)%20%5b10-2주차%5d.files/image012.jpg"
+v:shapes="그림_x0020_6"><![endif]></span><span lang=EN-US style='font-size:11.0pt;
+font-family:"Calibri",sans-serif'><o:p></o:p></span></p>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:14.0pt;font-family:
+"맑은 고딕";mso-bidi-font-family:Calibri'>x = vintner, y = writers<o:p></o:p></span></p>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:14.0pt;font-family:
+"맑은 고딕";mso-bidi-font-family:Calibri'>(0, 0)</span><span style='font-size:14.0pt;
+font-family:"맑은 고딕";mso-bidi-font-family:Calibri'>칸은 할 게 없으니 비용이<span
+lang=EN-US> 0.<o:p></o:p></span></span></p>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:14.0pt;font-family:
+"맑은 고딕";mso-bidi-font-family:Calibri'>v</span><span style='font-size:14.0pt;
+font-family:"맑은 고딕";mso-bidi-font-family:Calibri'>를<span lang=EN-US> &quot;
+&quot;</span>로 바꾸는 데는<span lang=EN-US> delete</span>연산 하나 필요<span lang=EN-US>,
+vi</span>를<span lang=EN-US> &quot; &quot;</span>로 바꾸는 데는<span lang=EN-US>
+delete</span>연산 둘 필요<span lang=EN-US>.<o:p></o:p></span></span></p>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:14.0pt;font-family:
+"맑은 고딕";mso-bidi-font-family:Calibri'>&nbsp;<o:p></o:p></span></p>
+
+<p style='margin:0cm'><span style='font-size:14.0pt;font-family:"맑은 고딕";
+mso-bidi-font-family:Calibri'>위와 같이<span lang=EN-US> 0</span>번 행과<span
+lang=EN-US> 0</span>번 열을 쉽게 채울 수 있다<span lang=EN-US>.<o:p></o:p></span></span></p>
+
+<p style='margin:0cm'><span style='font-size:14.0pt;font-family:"맑은 고딕";
+mso-bidi-font-family:Calibri'>위에서 구한 점화식을 이용하면 나머지 칸도 채울 수 있다<span lang=EN-US>.
+</span>특정 칸을 채울 때에는 그 칸의 <span style='color:red'>왼쪽</span><span lang=EN-US>, </span><span
+style='color:red'>위쪽</span><span lang=EN-US>, </span><span style='color:red'>왼쪽
+위<span lang=EN-US>(</span>대각선<span lang=EN-US>) </span></span>칸만 보면 된다<span
+lang=EN-US>. </span>총 <span style='color:red'>세 개의 칸 중 가장 작은 값으로 가져올 수 있는 것을 택한다</span><span
+lang=EN-US>.<o:p></o:p></span></span></p>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:14.0pt;font-family:
+"맑은 고딕";mso-bidi-font-family:Calibri'>&nbsp;<o:p></o:p></span></p>
+
+<p style='margin:0cm'><span style='font-size:14.0pt;font-family:"맑은 고딕";
+mso-bidi-font-family:Calibri;color:red'>왼쪽이나 위쪽</span><span style='font-size:
+14.0pt;font-family:"맑은 고딕";mso-bidi-font-family:Calibri'>의 값을 가져온다는 것은 삽입이나 삭제 연산을
+한다는 뜻이다<span lang=EN-US>. </span>따라서 <span style='color:red'>무조건 값을<span
+lang=EN-US> +1</span>을 하여</span> 가져와야 한다<span lang=EN-US>.<o:p></o:p></span></span></p>
+
+<p style='margin:0cm'><span style='font-size:14.0pt;font-family:"맑은 고딕";
+mso-bidi-font-family:Calibri'>왼쪽 위<span lang=EN-US>, </span><span
+style='color:red'>대각선 방향</span>에서 값을 가져올 때는 교체 연산을 한 것이므로 <span lang=EN-US
+style='color:red'>+1</span>을 하여 값을 가져온다<span lang=EN-US>. </span>단<span
+lang=EN-US>, </span>현재 칸에 해당하는<span lang=EN-US> x, y </span>내의 <span
+style='color:red'>문자가 서로 같은 경우</span>는 연산을 할 필요가 없으므로<span lang=EN-US>, </span>값을
+<span style='color:red'>더하지 않고 그대로</span> 가져온다<span lang=EN-US>.<o:p></o:p></span></span></p>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:14.0pt;font-family:
+"맑은 고딕";mso-bidi-font-family:Calibri'>&nbsp;<o:p></o:p></span></p>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:11.0pt;font-family:
+"Calibri",sans-serif;mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="그림_x0020_7"
+ o:spid="_x0000_i1026" type="#_x0000_t75" style='width:340.5pt;height:280.5pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="21.%20근사문자열매칭(String%20matching)%20%5b10-2주차%5d.files/image013.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=454 height=374
+src="21.%20근사문자열매칭(String%20matching)%20%5b10-2주차%5d.files/image014.jpg"
+v:shapes="그림_x0020_7"><![endif]></span><span lang=EN-US style='font-size:11.0pt;
+font-family:"Calibri",sans-serif'><o:p></o:p></span></p>
+
+<p style='margin:0cm'><span style='font-size:14.0pt;font-family:"맑은 고딕";
+mso-bidi-font-family:Calibri'>예를 들어<span lang=EN-US>, (4, 4)</span>칸<span
+lang=EN-US> (* </span>표시된 부분<span lang=EN-US>)</span>을 채우는 과정을 살펴보자<span
+lang=EN-US>.<o:p></o:p></span></span></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='mso-list:l4 level1 lfo10;tab-stops:list 36.0pt;
+     vertical-align:middle'><span style='font-size:14.0pt;font-family:"맑은 고딕";
+     mso-bidi-font-family:Calibri'>왼쪽에서 가져오는 경우<span lang=EN-US> : 4+1 = 5</span></span><span
+     lang=EN-US style='font-size:11.0pt;font-family:"Calibri",sans-serif'><o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l4 level1 lfo10;tab-stops:list 36.0pt;
+     vertical-align:middle'><span style='font-size:14.0pt;font-family:"맑은 고딕";
+     mso-bidi-font-family:Calibri'>위쪽에서 가져오는 경우<span lang=EN-US> : 3+1 = 4</span></span><span
+     lang=EN-US style='font-size:11.0pt;font-family:"Calibri",sans-serif'><o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l4 level1 lfo10;tab-stops:list 36.0pt;
+     vertical-align:middle'><span style='font-size:14.0pt;font-family:"맑은 고딕";
+     mso-bidi-font-family:Calibri'>왼쪽 위 대각선 방향에서 가져오는 경우<span lang=EN-US> : </span>문자가<span
+     lang=EN-US> t</span>로 같으므로<span lang=EN-US> 3</span>을 그대로 가져온다<span
+     lang=EN-US>.</span></span><span lang=EN-US style='font-size:11.0pt;
+     font-family:"Calibri",sans-serif'><o:p></o:p></span></li>
+</ul>
+
+<p style='margin:0cm'><span style='font-size:14.0pt;font-family:"맑은 고딕";
+mso-bidi-font-family:Calibri'>위 세 가지 중 가장 값이 작은<span lang=EN-US> 3</span>으로 채우면
+된다<span lang=EN-US>.<o:p></o:p></span></span></p>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:27.0pt'><span
+lang=EN-US style='font-size:14.0pt;font-family:"맑은 고딕";mso-bidi-font-family:
+Calibri'>&nbsp;<o:p></o:p></span></p>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:14.0pt;font-family:
+"맑은 고딕";mso-bidi-font-family:Calibri'>&nbsp;<o:p></o:p></span></p>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:14.0pt;font-family:
+"맑은 고딕";mso-bidi-font-family:Calibri'>&lt;Traceback&gt;<o:p></o:p></span></p>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:11.0pt;font-family:
+"Calibri",sans-serif;mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="그림_x0020_8"
+ o:spid="_x0000_i1025" type="#_x0000_t75" style='width:526.5pt;height:199.5pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="21.%20근사문자열매칭(String%20matching)%20%5b10-2주차%5d.files/image015.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=702 height=266
+src="21.%20근사문자열매칭(String%20matching)%20%5b10-2주차%5d.files/image016.jpg"
+v:shapes="그림_x0020_8"><![endif]></span><span lang=EN-US style='font-size:11.0pt;
+font-family:"Calibri",sans-serif'><o:p></o:p></span></p>
+
+<p style='margin:0cm'><span style='font-size:14.0pt;font-family:"맑은 고딕";
+mso-bidi-font-family:Calibri'>행렬의<span lang=EN-US> (m, n)</span>칸에 적힌 수부터<span
+lang=EN-US> (0, 0)</span>칸까지 거꾸로 따라가면<span lang=EN-US> x</span>를<span
+lang=EN-US> y</span>로 바꾸기 위한 연산 과정을 알 수 있다<span lang=EN-US>.<o:p></o:p></span></span></p>
+
+</div>
+
+</div>
+
+</div>
+
+<div>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:11.0pt;font-family:
+"Calibri",sans-serif'>&nbsp;<o:p></o:p></span></p>
+
+<p style='margin:0cm'><span lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif;
+color:#969696'>OneNote</span><span style='font-size:9.0pt;mso-ascii-font-family:
+Arial;mso-hansi-font-family:Arial;mso-bidi-font-family:Arial;color:#969696'>에서</span><span
+style='font-size:9.0pt;font-family:"Arial",sans-serif;color:#969696'> </span><span
+style='font-size:9.0pt;mso-ascii-font-family:Arial;mso-hansi-font-family:Arial;
+mso-bidi-font-family:Arial;color:#969696'>작성되었습니다</span><span lang=EN-US
+style='font-size:9.0pt;font-family:"Arial",sans-serif;color:#969696'>.<o:p></o:p></span></p>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

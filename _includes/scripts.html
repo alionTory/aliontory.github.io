@@ -82,3 +82,11 @@
     });
   </script>
 {% endif %}
+
+{% if page.categories[0]=="algorithm_notes" %}
+<script>
+    $("img").each(function(){
+        $(this).attr("src", "/algorithm_notes/"+$(this).attr("src"));
+    });
+</script>
+{% endif %}

@@ -1,14 +1,14 @@
 title:              외계인 토리의 블로그
 email:              nocurim67@gmail.com
-description:        A Blog Theme by Start Bootstrap
+description:        외계인 토리의 블로그입니다.
 author:             aliontory
 baseurl:            ""
 url:                "https://aliontory.github.io"
 
 # Social Profiles
-twitter_username:   SBootstrap
-github_username:    StartBootstrap
-facebook_username:  StartBootstrap
+twitter_username:   
+github_username:    
+facebook_username:  
 instagram_username:  
 linkedin_username:
 
@@ -23,3 +23,10 @@ plugins:
   - jekyll-feed
   - jekyll-paginate
   - jekyll-sitemap ## Uncomment this line to silently generate a sitemaps.org compliant sitemap for your Jekyll site
+
+defaults:
+  -
+    scope:
+      path: "algorithm_notes"
+    values:
+      layout: "post"
