@@ -90,3 +90,15 @@
     });
 </script>
 {% endif %}
+
+{% if page.categories[0]=="data_structure_notes" %}
+<script>
+    $("img").each(function(){
+        $(this).attr("src", "/data_structure_notes/"+$(this).attr("src"));
+    });
+    $("body").removeClass("light-theme blue_sky");
+    $("body").css("padding","0");
+    $(".container").addClass("light-theme blue_sky");
+    $(".shine-editor h1").css("display","none");
+</script>
+{% endif %}

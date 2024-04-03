@@ -1,0 +1,120 @@
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body class="light-theme blue_sky" style="padding: 20px;">
+    <div class="shine-editor">
+        <div><br></div>
+        <h2>수학적 귀납법</h2>
+        <div>
+            <ul>
+                <li>수학적 귀납법의 기본형&nbsp;:&nbsp;P(1)이 참이고, P(n-1)-&gt;P(n)이 참이면, P(n)은 모든 자연수&nbsp;n에 대해서 참이다.</li>
+                <ul>
+                    <li>위에서 P(1)을 base라 하고,&nbsp;P(n-1)-&gt;P(n)를 step이라 한다.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</li>
+                </ul>
+            </ul>
+        </div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+        <div>P(n-1)-&gt;P(n)을 증명할 때&nbsp;P(n-1)이 참이라고 ‘가정’하고&nbsp;P(n)임을 증명한다.</div>
+        <div><br></div>
+        <div>
+            <ul>
+                <li>수학적 귀납법의 강한 형태&nbsp;:&nbsp;P(1)이 참이고,&nbsp;P(1)∧P(2)∧…∧P(n-1)-&gt;P(n)이 참이면&nbsp;P(n)은&nbsp;모든
+                    자연수&nbsp;n에 대해서 참이다.</li>
+                <ul>
+                    <li>(∧는&nbsp;and, &amp;&amp;를 의미하는 수학 기호)</li>
+                </ul>
+            </ul>
+        </div>
+        <div><br></div>
+        <div><br></div>
+        <h2>수학적 귀납법 예제</h2>
+        <div>1+2+...+n = n(n+1)/2 가 모든 자연수 n에 대해 성립함을 증명하여라.</div>
+        <div>
+            <ul>
+                <li>base : n=1일 때</li>
+            </ul>
+            <div> 1=1*2/2 이므로 성립한다.</div>
+        </div>
+        <div>
+            <ul>
+                <li>step : 1+2+...+(n-1) = (n-1)n/2 가 성립한다고 가정하면</li>
+            </ul>
+            <div> 1+2+...+(n-1)+n = (n-1)n/2 + n</div>
+        </div>
+        <div> (n-1)n/2 + n = (n<sup>2</sup>-n+2n)/2 = n(n+1)/2</div>
+        <div> 1+2+...+(n-1)+n =&nbsp;n(n+1)/2</div>
+        <div><br></div>
+        <div><br></div>
+        <h2>명제&nbsp;P-&gt;Q의 의미</h2>
+        <div>P(n) : n이 등장하는 문장</div>
+        <div>명제&nbsp;:&nbsp;객관적으로 참,&nbsp;거짓을 판단할 수 있는 문장.&nbsp;아래의&nbsp;4개 문장은 명제이다.</div>
+        <div>조건&nbsp;:&nbsp;그 자체로는 명제가 아니지만,&nbsp;변수값에 따라 참,&nbsp;거짓을 판단할 수 있는 문장.&nbsp;아래에서&nbsp;P와&nbsp;Q는 조건이다.</div>
+        <div>&nbsp;</div>
+        <div>
+            <ul>
+                <li>P가 참, Q가 참&nbsp;-&gt;&nbsp;전체는 참</li>
+                <li>P가 참, Q가 거짓&nbsp;-&gt;&nbsp;전체는 거짓</li>
+                <li>P가 거짓, Q가 참&nbsp;-&gt;&nbsp;<u>전체는 참</u></li>
+                <li>P가 거짓, Q가 거짓&nbsp;-&gt;&nbsp;<u>전체는 참</u></li>
+            </ul>
+        </div>
+        <div>&nbsp;</div>
+        <div>예전에는&nbsp;3, 4번째 경우를&nbsp;vacuous(공허한)이라고 했다.</div>
+        <div>그러나 이 경우를&nbsp;true라고 하는 것이 더 편리하기에 지금은 참이라고 한다.</div>
+        <div>&nbsp;</div>
+        <div>ex1)&nbsp;자연수&nbsp;n에 대해&nbsp;3&lt;n -&gt; 10&lt;n<sup>2</sup></div>
+        <div>
+            <ul>
+                <li>위 명제는 참인가?</li>
+                <li>n = 1일 때,&nbsp;위 명제는 참. (거짓-&gt;거짓)</li>
+            </ul>
+        </div>
+        <div>&nbsp;</div>
+        <div>ex2)&nbsp;자연수&nbsp;n에 대해&nbsp;1&lt;n -&gt; 10&lt;n<sup>2</sup></div>
+        <div>n=1, n=4일 때는 참이 되지만, n=2일 때는 거짓이 된다.</div>
+        <div><br></div>
+        <div><br></div>
+        <h2>수학적 귀납법을 통한 재귀함수 증명</h2>
+        <div>
+            <pre data-code-language="cpp"
+                spellcheck="false">unsigned int sum(unsigned int x)<br>{<br>    if(x &lt;= 0) return 0;<br>    return x + sum(x – 1);<br>}</pre>
+            <div>위 함수가 항상&nbsp;0+1+2+…+x&nbsp;를 리턴한다는 것을 증명해 보자.</div>
+        </div>
+        <div>S(3)-&gt;S(2)-&gt;S(1)-&gt;S(0)-&gt;0-&gt;1-&gt;3-&gt;6&nbsp;처럼 따라 들어가는 식으로 생각하면 복잡한 함수에서 증명하기
+            어렵다.&nbsp;수학적 귀납법을 이용해 증명하자.</div>
+        <div>&nbsp;</div>
+        <div>
+            <ul>
+                <li>P(1)이 참이다&nbsp;:&nbsp;“sum(1)이 리턴하는 값은&nbsp;1이다”를 증명하면 됨.&nbsp;실제 코드에&nbsp;1을 대입하면&nbsp;1을 리턴함을 알 수
+                    있음.</li>
+                <li>P(x-1) -&gt; P(x)&nbsp;가 참이다&nbsp;:&nbsp;“sum(x-1)이&nbsp;1+2+…+(x-1)을
+                    리턴하면&nbsp;sum(x)는&nbsp;1+2+…+x를 리턴한다”를 증명하면 됨.</li>
+                <li>코드를 보면&nbsp;sum(x)는&nbsp;x+sum(x-1)의 값을 리턴함. sum(x-1)의 리턴 값은&nbsp;1+2+…+(x-1)과 같다고
+                    가정했으므로&nbsp;sum(x)는&nbsp;1+2+…+(x-1)+x를 리턴함을 확인할 수 있음</li>
+            </ul>
+            <div><br></div>
+        </div>
+        <div><br></div>
+        <h2>재귀함수의 시간복잡도 계산</h2>
+        <div>위 함수에서 sum(n)을 실행하는 데 걸리는 시간이 T(n)이라고 하자.</div>
+        <div>점근 표기법을 이용할 것이므로, if문의 비교 연산과 return문의 더하기 연산에 걸리는 시간이 총 1이라고 해도 문제가 없다.&nbsp;따라서 다음 식이 성립한다.</div>
+        <div><br></div>
+        <div>T(n) = (n&lt;=0 계산 시간) + (n + sum(n-1) 덧셈 계산 시간) + (sum(n-1) 실행 시간)</div>
+        <div>= 1 + T(n-1)</div>
+        <div><br></div>
+        <div>T(n-1) = 1 + T(n-2)</div>
+        <div>T(n-2) = 1 + T(n-3)</div>
+        <div>...</div>
+        <div>T(1) = 1+T(0)</div>
+        <div>T(0) = 1</div>
+        <div><br></div>
+        <div>T(n) = 1+1+1+...+1 = n</div>
+        <div><br></div>
+        <div>따라서 T(n) = O(n)이 성립한다.</div>
+        <div><br></div>
+    </div>
+</body>

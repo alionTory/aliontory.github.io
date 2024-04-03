@@ -1,0 +1,72 @@
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body class="light-theme blue_sky" style="padding: 20px;">
+    <div class="shine-editor">
+        <div><br></div>
+        <h2>점근적 표기</h2>
+        <div>
+            <ol>
+                <li>O&nbsp;:&nbsp;점근적 상한</li>
+            </ol>
+        </div>
+        <div> O(g(n)) = {f(n) |&nbsp;충분히 큰 모든&nbsp;n에 대하여&nbsp;f(n)&lt;=c*g(n)인 양의 상수&nbsp;c가 존재}</div>
+        <div> ex) {3n<sup>2</sup>, n<sup>2</sup>+n+3, n+2, nlogn, 3}&nbsp;⊂&nbsp;O(n<sup>2</sup>)</div>
+        <div>&nbsp;</div>
+        <div>
+            <ol start="2">
+                <li>Ω&nbsp;:&nbsp;점근적 하한</li>
+            </ol>
+        </div>
+        <div> Ω(g(n)) = {f(n) |&nbsp;충분히 큰 모든&nbsp;n에 대하여&nbsp;c*g(n)&lt;=f(n)인 양의 상수&nbsp;c가 존재}</div>
+        <div> ex) {n<sup>3</sup>, n<sup>2</sup>+3, 3n+2}&nbsp;⊂ Ω(n)</div>
+        <div>&nbsp;</div>
+        <div>
+            <ol start="3">
+                <li>Θ</li>
+            </ol>
+        </div>
+        <div> Θ(g(n)) = O(g(n))&nbsp;∩ Ω(g(n))</div>
+        <div> = {f(n) |&nbsp;충분히 큰 모든&nbsp;n에 대하여&nbsp;c<sub>1</sub>*g(n)&lt;=f(n)&lt;=c<sub>2</sub>*g(n)인 양의
+            상수&nbsp;c<sub>1</sub>, c<sub>2</sub>가 존재}</div>
+        <div> ex) {n<sup>2</sup>+n+3, 2n<sup>2</sup>+3}&nbsp;⊂ Θ(n<sup>2</sup>)</div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <h2>시간복잡도</h2>
+        <div>일반적으로 입력 크기가 커질수록 알고리즘의 수행시간이 증가하므로,&nbsp;수행시간을&nbsp;입력 크기 n에 대한 함수로 표현한다. 이러한 표현을 시간복잡도라고 한다.</div>
+        <div>시간복잡도는 주로 점근적 상한 표기법(빅-오 표기법)으로 표현된다.</div>
+        <div><br></div>
+        <div><br></div>
+        <div>
+            <h2>시간복잡도에서&nbsp;log</h2>
+            <div>시간복잡도에서&nbsp;로그의 밑&nbsp;2가 생략되는 경우가 많다.</div>
+            <div>&nbsp;</div>
+            <div>k = logn &lt;=&gt;&nbsp;2<sup>k&nbsp;</sup>= n</div>
+            <div>따라서&nbsp;logn은…</div>
+            <div>
+                <ul>
+                    <li>2를 몇 번 곱하면&nbsp;n이 되느냐의 질문에 대한 답</li>
+                    <li>n을&nbsp;2로 몇 번 나누면&nbsp;1이 되느냐의 질문에 대한 답</li>
+                </ul>
+            </div>
+            <div>로그함수는 지수함수의 역함수</div>
+            <div>&nbsp;</div>
+            <div>이를 이용해 이진 탐색(재귀)의 시간복잡도를 구할 수 있다.</div>
+            <div>T(n) = 1+T(n/2) = 1+1+T(n/4)=&nbsp;…</div>
+            <div>= T(2<sup>logn</sup>) = 1+T(2<sup>logn-1</sup>) = 1+1+T(2<sup>logn-2</sup>) = ... = logn</div>
+            <div>∴T(n)=O(logn)</div>
+            <div>&nbsp;</div>
+            <div>logn은&nbsp;n보다 월등히 작다</div>
+            <div>
+                <ul>
+                    <li>logn=10, n=1024</li>
+                </ul>
+                <div><br></div>
+            </div>
+            <div><br></div><br>
+        </div>
+    </div>
+</body>

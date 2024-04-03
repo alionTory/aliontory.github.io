@@ -1,0 +1,136 @@
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body class="light-theme blue_sky" style="padding: 20px;">
+    <div class="shine-editor">
+        <div><br></div>
+        <h2>이발사 문제</h2>
+        <div>어떤 섬에는 이발사가 한 명 있는데, 이 이발사는 자기 스스로 이발을 하지 않는 사람만 모두 이발을 해 준다.</div>
+        <div>이발사의 머리는 누가 이발을 해 주는가?</div>
+        <div>
+            <ul>
+                <li>스스로 이발을 한다면 → 이발사가 이발 해 주면 안됨</li>
+                <li>스스로 이발을 하지 않는다면 → 이발사가 이발을 해 주어야 함</li>
+            </ul>
+            <div><br></div>
+            <div>따라서 이발사가 자기 스스로 이발을 하지 않는 사람만 모두 이발을 해줄수는 없다.</div>
+        </div>
+        <div><br></div>
+        <div>위 이발사 문제에 의해 아래와 같은 심각한 결과가 도출된다.</div>
+        <div>
+            <ul>
+                <li>러셀의 역설 : 집합론이 재정의되는 결과를 가져옴</li>
+                <li>괴델의 불완정성 정리 : 자동 증명 분야의 중요한 정리</li>
+                <li>어쩌면 P-NP 문제와도 상관이 있다.</li>
+            </ul>
+            <div><br></div>
+        </div>
+        <div><br></div>
+        <h2>정지 문제 (HALTING Problem)</h2>
+        <div>컴파일러가 프로그램이 멈추지 않는 것을 알려주면 편할 것이다.</div>
+        <div><br></div>
+        <div>문제&nbsp;:&nbsp;프로그램&nbsp;M과&nbsp;입력&nbsp;X가 있을 때, M에 입력&nbsp;X를 주고 수행시키면&nbsp;M은 언젠가 종료될 것인가?</div>
+        <div><br></div>
+        <div>M(X) :&nbsp;프로그램&nbsp;M에 입력X를 주고 실행시킨 상태</div>
+        <div>&nbsp;</div>
+        <div>다음과 같은 문장이 성립할 수 있다.</div>
+        <ul type="disc">
+            <ul type="disc">
+                <li>M(X)는 종료한다 or&nbsp;종료하지 않는다</li>
+                <li>M(X)의 출력은&nbsp;Yes이다/No이다</li>
+                <li>M(X)의 출력은&nbsp;01001010이다</li>
+                <li>...</li>
+            </ul>
+        </ul>
+        <div><br></div>
+        <div>문제를 다시 말하면, 어떤 프로그램이 종료하지 않는지를 돌려보기&nbsp;<u>전에&nbsp;</u>알 수 있는가?</div>
+        <div>
+            <ul>
+                <li>돌려봐서 끝나면 끝난다는 것을 알 수 있지만,&nbsp;안 끝나고 있으면 언젠가 끝난다거나 절대로 안 끝난다는 것을 알 수 없다.</li>
+            </ul>
+            <div><br></div>
+        </div>
+        <div><br></div>
+        <h2>Alan Turing의 증명</h2>
+        <div>HALTING Problem은 풀 수 없다.&nbsp;귀류법을 통해 증명.</div>
+        <div>&nbsp;</div>
+        <div>
+            <ol>
+                <li>프로그램&nbsp;D가 존재해서,&nbsp;모든&nbsp;프로그램&nbsp;M과&nbsp;M에 대한&nbsp;모든&nbsp;입력&nbsp;X에 대해&nbsp;M(X)가 종료될지를
+                    판단할 수 있다고 가정한다.</li>
+            </ol>
+        </div>
+        <div>
+            <ul>
+                <ul>
+                    <li>프로그램&nbsp;D는&nbsp;Yes/No만을 대답함.</li>
+                    <li>프로그램&nbsp;D는 항상 종료됨.</li>
+                </ul>
+                <li>이를&nbsp;"프로그램&nbsp;D가 정지 문제를 결정(Decide)한다"&nbsp;라고 한다.</li>
+                <li>즉,&nbsp;프로그램&nbsp;D의 입력은 어떤 프로그램과 그 프로그램에 주어질 입력이고,&nbsp;출력은 종료 여부이다.</li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <ul>
+                    <li>D(M, X) -&gt; Yes/No -&gt;&nbsp;종료</li>
+                </ul>
+            </ul>
+        </div>
+        <div>&nbsp;</div>
+        <div>
+            <ol start="2">
+                <li>프로그램&nbsp;D가 있다면, D를 이용하여 다음&nbsp;D’과&nbsp;S를 쉽게 만들 수 있다.</li>
+            </ol>
+        </div>
+        <ul type="disc">
+            <li>D’(M, X) : M(X)가 멈추는 경우&nbsp;D’(M, X)는 멈추지 않고, M(X)가 멈추지 않는 경우&nbsp;D’(M, X)는 멈춘다.</li>
+        </ul>
+        <ul>
+            <ul>
+                <li>D(M, X)의 출력이&nbsp;No이면 멈추고, Yes이면 무한루프</li>
+            </ul>
+        </ul>
+        <ul type="disc">
+            <li>S(M) : M(M)이 멈추는 경우&nbsp;S(M)은 멈추지 않고,&nbsp;M(M)이 멈추지 않는 경우&nbsp;S(M)은 멈춘다.</li>
+            <ul>
+                <li>D’(M, M)을 돌리기만 하면 됨.</li>
+                <li>M은 프로그램이지만 문자열일 뿐이므로, D’과&nbsp;M의 입력으로 줄 수 있음.</li>
+            </ul>
+        </ul>
+        <div>&nbsp;</div>
+        <div>
+            <ol start="3">
+                <li>S(S)를 돌리면?</li>
+            </ol>
+        </div>
+        <div>
+            <ul>
+                <li>S(S)가 멈추는 경우&nbsp;S(S)는 멈추지 않고, S(S)가 멈추지 않는 경우&nbsp;S(S)는 멈춘다.</li>
+            </ul>
+            <ul>
+                <li>-&gt;모순</li>
+                <li>따라서&nbsp;D는 존재하지 않는다.</li>
+            </ul>
+            <div><br></div>
+        </div>
+        <div><br></div>
+        <h2>Hacking을 막아 보자</h2>
+        <div>배경&nbsp;:&nbsp;어떤 연구소 과제</div>
+        <div>목표&nbsp;:&nbsp;웹 서비스&nbsp;PHP코드 해킹 방지</div>
+        <div>방법&nbsp;: PHP&nbsp;소스 코드를 분석해서 해킹 공격에 취약한 부분이 있는지 보자.</div>
+        <div>예)&nbsp;사용자 입력에&nbsp;DB query&nbsp;구문이 있는지 확인</div>
+        <div>취약한 부분을 모두 찾아내는 알고리즘이 존재할까?</div>
+        <div>&nbsp;</div>
+        <div>모든 경우를 다 확인할 수는 없다.&nbsp;그냥 봐도 경우의 수가 너무 많다.</div>
+        <div>과제 담당자&nbsp;:&nbsp;잘 따지면 모든 경우를 다 찾을 수 있는데 제대로 못하고 있다</div>
+        <div>-&gt;&nbsp;그렇지 않다.&nbsp;불가능하다는 증명이 있다&nbsp;-&gt;&nbsp;이 문제가 풀리면&nbsp;HALTING이 풀림</div>
+        <div><br></div>
+        <div>PHP 코드를 멈추지 않는 형태로 바꾼다. 원래 코드가 해킹된다면 바꾼 코드도 해킹되고, 반대도 성립하도록 한다.</div>
+        <div>어떤 해킹 방법이든 사용할 수 있는 해커를 가정하고,&nbsp;해커는 해킹에 성공할 경우 PHP코드가 멈추도록 한다고 문제를 정의한다.</div>
+        <div>이는 정지 문제와 다르지 않다.</div>
+    </div>
+</body>

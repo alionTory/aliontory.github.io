@@ -30,3 +30,8 @@ defaults:
       path: "algorithm_notes"
     values:
       layout: "post"
+  -
+    scope:
+      path: "data_structure_notes"
+    values:
+      layout: "post"

@@ -1,0 +1,143 @@
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body class="light-theme blue_sky" style="padding: 20px;">
+    <div class="shine-editor">
+        <div><br></div>
+        <div>
+            <h2>배열(Array)</h2>
+            <div>
+                <ul>
+                    <li>정의 :&nbsp;<span class="shine-text-red">연속된 주소</span>에&nbsp;<span class="shine-text-red">동일한
+                            타입</span>의 데이터가 저장되는 자료구조이다.</li>
+                    <li>장점</li>
+                    <ul>
+                        <li>n개 중 k번째 원소에 대한 access(읽기나 쓰기)가 상수 시간에 가능하다.</li>
+                        <ul>
+                            <li>“(배열 시작 주소) + k * (자료형 크기)” 번 주소에 접근하면 된다.</li>
+                        </ul>
+                        <li>search가 빠르다.</li>
+                    </ul>
+                    <li>단점</li>
+                    <ul>
+                        <li>크기 변화 비용이 크다.</li>
+                        <ul>
+                            <li>근처 공간이 부족하면 원소 전체를 이동시켜야 하기 때문이다.</li>
+                        </ul>
+                        <li>Insert, Delete가 느릴 수 있다.</li>
+                    </ul>
+                </ul>
+                <div><br></div>
+            </div>
+            <div><br></div>
+            <h2>Linear Search</h2>
+            <div>배열의 처음부터 끝까지 검사하여 원하는 값의 위치를 찾는 알고리즘이다.</div>
+            <div>
+                <pre data-code-language="cpp"
+                    spellcheck="false">int search(int a[], int n, int x)<br>{<br>    int i;<br>    for(i=0; i&lt;n; i++)<br>        if(a[i] == x) return i;<br>    return -1;<br>}</pre>
+                <div><br></div>
+                <div>O(n)시간이 걸린다.</div>
+                <div><br></div>
+                <div><br></div>
+                <h2>Binary Search</h2>
+            </div>
+            <div>배열이 정렬되어 있으면 Binary Search로 값을 더 빠르게 찾을 수 있다.</div>
+            <div>
+                <pre data-code-language="cpp"
+                    spellcheck="false">int search(int a[], int n, int x)<br>{<br>    int l, r, m;<br>    l = 0; r = n-1;<br>    while(l&lt;=r) {<br>        m = (l+r)/2;<br>        if(a[m] &lt; x)<br>            l = m+1;<br>        else if(a[m] &gt; x)<br>            r = m-1;<br>        else<br>            return m;<br>    }<br>    return -1;<br>}</pre>
+            </div>
+            <div><br></div>
+            <div><br></div>
+            <h2>루프 불변성(Invariant)</h2>
+            <div>루프 불변성&nbsp;:&nbsp;반복문이 실행되는 동안 변하지 않는 성질</div>
+            <div>&nbsp;</div>
+            <div>루프 불변성을 보이려면 다음 세 가지를 만족해야 한다.</div>
+            <div>
+                <ol>
+                    <li>&nbsp;초기조건&nbsp;:&nbsp;루프가&nbsp;첫 번째 반복을 시작하기 전에 루프 불변성이&nbsp;참이어야 한다.</li>
+                    <li>&nbsp;유지조건&nbsp;:&nbsp;루프의&nbsp;반복이 시작되기 전에 루프 불변성이&nbsp;참이었다고 가정하면,&nbsp;다음 반복이 시작되기 전까지도 계속
+                        참이여야 한다.</li>
+                    <li>&nbsp;종료조건&nbsp;:&nbsp;루프가&nbsp;종료될 때&nbsp;그 불변식이 알고리즘의&nbsp;타당성을 보이는 데 유용한 특성을 가져야 한다.</li>
+                </ol>
+            </div>
+            <div><br></div>
+            <div><br></div>
+            <h2>Invariant를 이용한 binary search 증명</h2>
+            <div>Invariant :&nbsp;만약 어떤&nbsp;i에 대해서&nbsp;a[i] = x라면, l&lt;=i&lt;=r이&nbsp;항상 성립한다.</div>
+            <div>
+                <ol>
+                    <li>&nbsp;초기조건&nbsp;: l은 인덱스의 시작, r은 인덱스의 끝이므로&nbsp;l&lt;=i&lt;=r가 성립.</li>
+                    <li>&nbsp;유지조건</li>
+                </ol>
+                <div>
+                    <div>  <img src="Files/SmartSelect_20240324_205920_Samsung%20Notes.jpg" width="474px"><br></div>
+                    <ul>
+                        <ul>
+                            <li>x&lt;a[m]이라면 i&lt;m, i&lt;=m-1, r=(m-1)&gt;=i, r &gt;= i.</li>
+                        </ul>
+                    </ul>
+                    <div>  <img src="Files/SmartSelect_20240324_205939_Samsung%20Notes.jpg" width="461px"><br></div>
+                    <ul>
+                        <ul>
+                            <li>a[m]&lt;x라면&nbsp;m+1&lt;=i, l=(m+1)&lt;=i, l&lt;=i.</li>
+                            <li>invariant가 깨질 수 있는 코드가 없다.</li>
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <ol start="3">
+                    <li>종료조건&nbsp;: l과&nbsp;r의 차이가 계속 줄어들기 때문에,&nbsp;적어도&nbsp;l=i=r이 될 때&nbsp;i를 리턴하게 된다.</li>
+                </ol>
+            </div>
+            <div>&nbsp;</div>
+            <div>
+                <ul>
+                    <li>a[i] = x인&nbsp;i가 없다면, l과&nbsp;r의 차이가 계속 줄어들기 때문에,&nbsp;루프는 반드시 끝나고&nbsp;-1이 리턴 됨</li>
+                </ul>
+            </div>
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <h2>Recursive(재귀적인) Binary Search</h2>
+            <div>
+                <pre data-code-language="cpp"
+                    spellcheck="false">int search(int a[], int n, int x)<br>{<br>    if(n==0) return -1;<br><br>    int m = n/2;<br>    if(a[m] == x) return m;<br>    else if(a[m] &gt; x) return search(a, m, x);<br>    else {<br>        int r = search(a+m+1, n-m-1, x);<br>        if(r = -1) return -1;<br>        else return r+m+1;<br>    }<br>}</pre>
+                <div><br></div>
+            </div>
+            <div><br></div>
+            <h2>재귀적인 이진 탐색 증명</h2>
+            <div>재귀 호출이 반복될수록 감소하는 값&nbsp;n을 기준으로,&nbsp;수학적 귀납법을 적용한다.</div>
+            <div>&nbsp;</div>
+            <div>
+                <ul>
+                    <li>주장&nbsp;:&nbsp;만약 어떤&nbsp;i에 대해서&nbsp;a[i] = x라면,&nbsp;위 함수는&nbsp;i를 리턴한다.</li>
+                    <li>Base :&nbsp;n = 0인 경우 “어떤&nbsp;i에 대해서&nbsp;a[i] = x”가 성립할 방법이 없고,&nbsp;함수는 항상&nbsp;-1을 리턴한다.
+                    </li>
+                    <li>Step :&nbsp;n=0, n=1, n=2,&nbsp;…, n = k-1인 경우 주장이 참이라 가정하면, n = k인 경우 주장이 참이 됨을 보이면 된다.</li>
+                </ul>
+            </div>
+            <div> n = k일 때,</div>
+            <div>
+                <ul>
+                    <ul>
+                        <li>Case 1 : a[m] = x인 경우&nbsp;m을 리턴하므로 주장이 성립</li>
+                        <li>Case 2 : a[m] &gt; x인 경우&nbsp;a[m], a[m+1],&nbsp;…, a[n]&nbsp;중에서는&nbsp;x와 같은 값이
+                            없다.&nbsp;따라서&nbsp;a[i] = x인 경우가 있다면&nbsp;i는&nbsp;0, 1,&nbsp;…, m-1중 하나이다.&nbsp;위에서, n=0,
+                            n=1,&nbsp;…, n=k-1인 경우 주장이 참이 된다고 가정하였다.&nbsp;따라서&nbsp;n=m일 경우,&nbsp;주장이 참이 된다.&nbsp;즉,
+                            search(a, m, x)는 정확하게 작동하여&nbsp;i를 리턴한다. search(a, k, x)는&nbsp;i를 그대로 리턴하게 되므로, n=k일 때 주장은
+                            참이 된다.</li>
+                        <li>Case 3 : a[m] &lt; x인 경우, a[i] = x인 경우가 있다면&nbsp;i는&nbsp;m+1, m+2,&nbsp;…, k&nbsp;중 하나이다.
+                            search(a+m+1, k-m-1, x)는&nbsp;n=0,&nbsp;…, n=k-1인 경우 중 하나이므로,&nbsp;위 가정에 따르면 정확하게
+                            작동하여&nbsp;i를 리턴한다.&nbsp;그러나&nbsp;a에&nbsp;a+m+1을 입력했기 때문에,&nbsp;재귀 호출된 함수에서의&nbsp;i는 호출한 함수
+                            기준으로는&nbsp;i-m-1가 된다.&nbsp;이를 고려하여&nbsp;m+1을 더해 리턴하므로, n=k일 때 주장은 참이 된다.</li>
+                        <li>Case1, 2, 3에서&nbsp;a[i] = x를 만족하는&nbsp;i가 있다고 가정하였다. a[i] = x를 만족하는&nbsp;i가 없는 경우,&nbsp;주장은
+                            무조건 성립하므로,&nbsp;그러한 가정을 해도 문제가 없다. (만족하는&nbsp;i가 없는 경우는 고려하지 않아도 된다.)</li>
+                    </ul>
+                </ul>
+            </div><br>
+        </div>
+    </div>
+</body>
