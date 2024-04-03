@@ -1103,7 +1103,7 @@ textarea {
     word-wrap: break-word;
     contain: content;
     display: block;
-    min-height: 100%;
+    /* min-height: 100%; */
     white-space: normal;
     width: 100%
 }
